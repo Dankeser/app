@@ -46,11 +46,8 @@ class Content(VerschlüsselModul):
             regr = Regression(self,x=x_werte,y=y_werte,title=content_name, index=index)
             regr.zeichnen()
             return
-        print(self.master.rightframe.grafikframe.winfo_children())
         for i in self.master.rightframe.grafikframe.winfo_children():
             i.forget()
-        print(1)
-        print(getattr(self, "grafik" + str(index)))
         getattr(self, "grafik" + str(index)).pack(side="top", expand=1)
 
     # delete button callback
