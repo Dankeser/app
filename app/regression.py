@@ -25,7 +25,6 @@ def cov(la, lb):
 # Regression Oberklasse, die uns ermöglicht, darin gesteckte Funktionen von Regression zu benutzen.
 class Regression:
     def __init__(self,master, x, y, index: int, title=None, titlex="Titelx", titley="Titely"):
-        print(type(x))
         self.master = master
         self.x = x
         self.x=list(map(float,self.x))
@@ -71,6 +70,5 @@ class Regression:
 
         axes.legend(["Kovarianz: "+str(cov(self.x,self.y))])
         setattr(self.master,"grafik"+str(self.index),self.canvas.get_tk_widget())
-        print(getattr(self.master,"grafik"+str(self.index)))
         getattr(self.master,"grafik"+str(self.index)).pack(side='top',expand=1)
     
